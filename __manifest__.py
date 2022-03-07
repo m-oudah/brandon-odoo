@@ -27,6 +27,11 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/saleOrderReport.xml',
+        # 'views/custom_header.xml',
+        # 'views/custom_footer.xml',
+        'views/namavet_layout.xml',
+        # 'views/addvet_layout.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [

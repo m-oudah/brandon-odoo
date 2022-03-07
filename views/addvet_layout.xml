@@ -1,0 +1,73 @@
+<openerp>
+    <data>
+        <template id="addvet_layout" inherit_id="web.external_layout_boxed">
+
+            <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
+
+                <div class="header">
+                    <div class="row">
+                        <div class="col-6">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
+                        </div>
+                        <div class="col-6 text-right mb4">
+                            <h4 class="mt0" t-field="company.report_header"/>
+                            <div name="company_address" class="float-right mb4">
+                                 <span class="company_address" t-field="company.partner_id"
+                                  t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr/>
+
+                <!--                <div class="header">-->
+                <!--                    <div class="row">-->
+                <!--                        <div class="col-xs-3">-->
+                <!--                             <h5>Logo</h5>-->
+                <!--                        </div>-->
+                <!--                        <div class="col-xs-9 text-right" style="margin-top:20px;">-->
+                <!--                            <h5>Custom Header</h5>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                    <div class="row zero_min_height">-->
+                <!--                        <div class="col-xs-12">-->
+                <!--                            <div style="border-bottom: 1px solid black;"/>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+            </xpath>
+
+
+            <xpath expr="//div[@t-attf-class='footer o_boxed_footer o_company_#{company.id}_layout']"
+                   position="replace">
+                <div class="footer">
+                    <div class="text-center" style="border-top: 1px solid black;">
+                        <ul class="list-inline">
+                            <li>Developed By: Hassan Enterprises</li>
+
+                            <li>&amp;bull;</li>
+                            <li>Phone: +92 321 1234567</li>
+
+                            <li>&amp;bull;</li>
+                            <li>Email: abc@gmail.com</li>
+                        </ul>
+
+                        <ul class="list-inline">
+                            <li>Page:</li>
+                            <li>
+                                <span class="page"/>
+                            </li>
+                            <li>/</li>
+                            <li>
+                                <span class="topage"/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </xpath>
+
+
+        </template>
+    </data>
+</openerp>

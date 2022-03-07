@@ -1,0 +1,24 @@
+
+<openerp>
+    <data>
+        <template id="monthly_report_header" inherit_id="web.external_layout_boxed">
+            <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
+                <div class="header">
+                    <div class="row">
+                        <div class="col-xs-3">
+
+                        </div>
+                        <div class="col-xs-9 text-right" style="margin-top:20px;">
+                            <h5>Custom Header</h5>
+                        </div>
+                    </div>
+                    <div class="row zero_min_height">
+                        <div class="col-xs-12">
+                            <div style="border-bottom: 1px solid black;"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</openerp>
