@@ -3,14 +3,15 @@
     'name': "Brandon",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+       This is 
+       
+       """,
 
     'description': """
         Long description of module's purpose
     """,
 
-    'author': "My Company",
+    'author': "Brandon IT Department - Mohammed Oudah",
     'website': "http://www.brandon-group.net",
 
     # Categories can be used to filter modules in modules listing
@@ -30,8 +31,7 @@
         # 'views/custom_header.xml',
         # 'views/custom_footer.xml',
         'views/namavet_layout.xml',
-        # 'views/addvet_layout.xml',
-
+        'views/addvet_layout.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

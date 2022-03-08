@@ -2,69 +2,87 @@
     <data>
         <template id="addvet_layout" inherit_id="web.external_layout_boxed">
 
-            <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
+            <xpath expr="//div[@class='header']" position="replace">
 
-                <div class="header">
-                    <div class="row">
+
+                <div class="header"
+                     style="border-bottom:1px solid #9a9a9a; padding-bottom:15px;  vertical-align:middle; font-family:Oswald,Calibri; ">
+                    <div class="row align-middle">
                         <div class="col-6">
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="135px"
+                                 alt="Addvet Logo"/>
                         </div>
-                        <div class="col-6 text-right mb4">
+                        <div class="col-6 text-right align-middle" style="vertical-align:middle;">
                             <h4 class="mt0" t-field="company.report_header"/>
-                            <div name="company_address" class="float-right mb4">
-                                 <span class="company_address" t-field="company.partner_id"
-                                  t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                            <div name="company_address" class="float-right mb4 align-middle"
+                                 style="padding-top:50px; font-size:18pt;">
+
+                                <span>A Jordanian Animal Health Company</span>
+
+                                <!--                                <span class="company_address" t-field="company.partner_id"-->
+                                <!--                                      t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>-->
+
+
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <hr/>
-
-                <!--                <div class="header">-->
-                <!--                    <div class="row">-->
-                <!--                        <div class="col-xs-3">-->
-                <!--                             <h5>Logo</h5>-->
-                <!--                        </div>-->
-                <!--                        <div class="col-xs-9 text-right" style="margin-top:20px;">-->
-                <!--                            <h5>Custom Header</h5>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                    <div class="row zero_min_height">-->
-                <!--                        <div class="col-xs-12">-->
-                <!--                            <div style="border-bottom: 1px solid black;"/>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
             </xpath>
 
 
-            <xpath expr="//div[@t-attf-class='footer o_boxed_footer o_company_#{company.id}_layout']"
+            <xpath expr="//div[@class='footer']"
                    position="replace">
+
                 <div class="footer">
-                    <div class="text-center" style="border-top: 1px solid black;">
-                        <ul class="list-inline">
-                            <li>Developed By: Hassan Enterprises</li>
 
-                            <li>&amp;bull;</li>
-                            <li>Phone: +92 321 1234567</li>
+                    <div class="row align-middle"
+                         style=" padding:2px; color:#555;  border-top:1px solid #9a9a9a; font-family:Oswald,Calibri;  ">
+                        <div class="col-10 float-left " style="padding:15px;">
+                            <p>AFAQ ADDITIVES FEED CO. [Registration No. 1748]</p>
 
-                            <li>&amp;bull;</li>
-                            <li>Email: abc@gmail.com</li>
-                        </ul>
 
-                        <ul class="list-inline">
-                            <li>Page:</li>
-                            <li>
-                                <span class="page"/>
-                            </li>
-                            <li>/</li>
-                            <li>
-                                <span class="topage"/>
-                            </li>
-                        </ul>
+                            <div class="col-md-6 mb-4">
+
+                                <ul class="list-unstyled " >
+                                    <li>
+                                        <span>
+                                            <img src='/brandon/static/src/whatsapp.png' width="20px"/>
+                                            +962 6 552 4994
+                                        </span>
+
+                                    </li>
+
+                                    <li>
+                                        <span>
+                                            <img src='/brandon/static/src/website.png' width="20px"/>
+                                             <a href="mailto:info@addvet.net">info@addvet.net</a>
+                                        </span>
+                                    </li>
+
+                                     <li>
+                                        <span>
+                                            <img src='/brandon/static/src/location.png' width="20px"/>
+                                             Industrial Zone [124] - AlZarqa - Amman- Jordan
+                                        </span>
+
+                                    </li>
+
+
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-2 float-right" style="padding:25px; vertical-align:middle;">
+                            <img src='/brandon/static/src/addvet_qr.png' width="80px"/>
+                        </div>
                     </div>
-                </div>
+
+
+                </div> <!-- Footer Div -->
             </xpath>
 
 
