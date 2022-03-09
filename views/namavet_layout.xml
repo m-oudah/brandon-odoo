@@ -7,7 +7,7 @@
                 <div class="header" style="border-bottom:1px solid #43a590; padding-bottom:10px; ">
                     <div class="row">
                         <div class="col-6">
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="300px" alt="Logo"/>
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="310px" alt="Logo"/>
                         </div>
                         <div class="col-6 text-right mb4">
                             <h4 class="mt0" t-field="company.report_header"/>

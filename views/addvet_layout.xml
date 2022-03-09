@@ -1,9 +1,8 @@
 <openerp>
     <data>
-        <template id="addvet_layout" inherit_id="web.external_layout_boxed">
+        <template id="addvet_layout" inherit_id="web.external_layout_standard">
 
-            <xpath expr="//div[@class='header']" position="replace">
-
+            <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
 
                 <div class="header"
                      style="border-bottom:1px solid #9a9a9a; padding-bottom:15px;  vertical-align:middle; font-family:Oswald,Calibri; ">
@@ -31,7 +30,7 @@
             </xpath>
 
 
-            <xpath expr="//div[@class='footer']"
+            <xpath expr="//div[@t-attf-class='footer o_standard_footer o_company_#{company.id}_layout']"
                    position="replace">
 
                 <div class="footer">
@@ -44,26 +43,28 @@
 
                             <div class="col-md-6 mb-4">
 
-                                <ul class="list-unstyled " >
+                                <ul class="list-unstyled ">
                                     <li>
                                         <span>
                                             <img src='/brandon/static/src/whatsapp.png' width="20px"/>
                                             +962 6 552 4994
                                         </span>
 
+
                                     </li>
 
                                     <li>
                                         <span>
                                             <img src='/brandon/static/src/website.png' width="20px"/>
-                                             <a href="mailto:info@addvet.net">info@addvet.net</a>
+                                            <a href="mailto:info@addvet.net">info@addvet.net</a>
                                         </span>
+
                                     </li>
 
-                                     <li>
+                                    <li>
                                         <span>
                                             <img src='/brandon/static/src/location.png' width="20px"/>
-                                             Industrial Zone [124] - AlZarqa - Amman- Jordan
+                                            Industrial Zone [124] - AlZarqa - Amman- Jordan
                                         </span>
 
                                     </li>
