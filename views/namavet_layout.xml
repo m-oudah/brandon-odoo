@@ -4,16 +4,16 @@
 
             <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
 
-                <div class="header" style="border-bottom:1px solid #43a590; padding-bottom:10px; ">
+                <div class="header" style="border-bottom:2px solid #43a590; padding-bottom:10px; ">
                     <div class="row">
                         <div class="col-6">
                             <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="310px" alt="Logo"/>
                         </div>
-                        <div class="col-6 text-right mb4">
+                        <div class="col-6 text-right ">
                             <h4 class="mt0" t-field="company.report_header"/>
                             <div name="company_address" class="float-right mb4">
 
-                                <img src='/brandon/static/src/Jordan-flag.png'/>
+                                <img src='/brandon/static/src/Jordan-flag.png' />
 
                                 <!--                                <span class="company_address" t-field="company.partner_id"-->
                                 <!--                                      t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>-->
@@ -45,21 +45,21 @@
 
             <xpath expr="//div[@t-attf-class='footer o_boxed_footer o_company_#{company.id}_layout']"
                    position="replace">
-                <div class="footer">
+                <div class="footer" style="font-size:9pt; ">
 
-                    <div class="row align-middle" style="background-color:#e7e7e7; padding:3px; color:#6f6f6f;">
-                        <div class="col-2 " style="padding:25px;">
+                    <div class="row align-middle" style="background-color:#e7e7e7; padding:3px; border-top:1px solid #ccc; color:#6f6f6f;">
+                        <div class="col-3 " style="padding:25px;">
                             <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="130px" alt="Logo"/>
 
                         </div>
-                        <div class="col-5 align-middle" style="border-right:solid 1px #ccc;padding:20px; ">
+                        <div class="col-4 align-middle" style="border-right:solid 1px #ccc;padding:20px; ">
                             <p>
                                 Professionals in the field of Poultry,
                                 Veterinary, Pharmacology, and
                                 Animal Health Care.
                             </p>
                         </div>
-                        <div class="col-5 align-middle" style=" padding:20px;">
+                        <div class="col-5 align-middle" style=" padding-left:20px; padding-top:10px; ">
                             <p>
                                 <span class="company_address" t-field="company.partner_id"
                                       t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>

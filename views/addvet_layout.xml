@@ -5,10 +5,10 @@
             <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
 
                 <div class="header"
-                     style="border-bottom:1px solid #9a9a9a; padding-bottom:15px;  vertical-align:middle; font-family:Oswald,Calibri; ">
+                     style="border-bottom:1px solid #9a9a9a; padding-bottom:10px;  vertical-align:middle; font-family:Oswald,Calibri; ">
                     <div class="row align-middle">
                         <div class="col-6">
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="135px"
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="110px"
                                  alt="Addvet Logo"/>
                         </div>
                         <div class="col-6 text-right align-middle" style="vertical-align:middle;">
