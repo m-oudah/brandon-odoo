@@ -28,8 +28,12 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/saleOrderReport.xml',
+        # 'views/addvet_layout_old.xml',
         'views/addvet_layout.xml',
+        # 'views/namavet_layout_old.xml',
         'views/namavet_layout.xml',
+        'views/maxvet_layout.xml',
+        'views/hipro_layout.xml',
         'views/namavet_report_saleorder_document.xml',
     ],
     # only loaded in demonstration mode

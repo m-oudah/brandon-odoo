@@ -1,0 +1,92 @@
+<openerp>
+    <data>
+        <template id="maxvet_layout">
+            <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
+
+                <div class="header" style="border-bottom:1px solid #ababab; padding-bottom:10px; ">
+                    <div class="row">
+                        <div class="col-7">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="180px" alt="Logo"/>
+                        </div>
+                        <div class="col-5 text-center">
+                            <h4 class="mt0" t-field="company.report_header"/>
+                            <div name="company_address">
+                                <h4 style="color:#ffd52f; padding-top:40px; font-weight:bold;">Maxvet Animals Care</h4>
+                                <!--                                <img src='/brandon/static/src/Jordan-flag.png' />-->
+
+                                <!--                                <span class="company_address" t-field="company.partner_id"-->
+                                <!--                                      t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>-->
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+
+
+            <div t-attf-class="article o_report_layout_boxed o_company_#{company.id}_layout"
+                 t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <div class="pt-5">
+                    <!-- This div ensures that the address is not cropped by the header. -->
+                    <t t-call="web.address_layout"/>
+                </div>
+                <t t-raw="0"/>
+            </div>
+
+            <xpath expr="//div[@t-attf-class='footer o_boxed_footer o_company_#{company.id}_layout']"
+                   position="replace">
+
+                <div t-attf-class="footer o_boxed_footer" style="border-top:1px solid #ababab; padding:10px;">
+                    <div class="row mb8">
+
+                        <div class="col-5 text-left" style="border-right: 2px solid #ffd52f;">
+                            <!--                            <div>-->
+                            <!--                                <span t-field="company.phone"/>-->
+                            <!--                            </div>-->
+                            <!--                            <div>-->
+                            <!--                                <span t-field="company.email"/>-->
+                            <!--                            </div>-->
+
+                            <!--                            <div>-->
+                            <!--                                <span t-field="company.website"/>-->
+                            <!--                            </div>-->
+
+
+                            <div>
+                                <span class="company_address" t-field="company.partner_id"
+                                      t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                            </div>
+
+                        </div>
+                        <div class="col-5 text-left mb4" style="border-right: 2px solid #ffd52f;">
+
+                            <div>
+                                <h5 t-field="company.website"></h5>
+                            </div>
+                            <div>
+                                <span t-field="company.email"/>
+                            </div>
+                            <div>
+                                <span t-field="company.phone"/>
+                            </div>
+
+                        </div>
+                        <div class="col-2 text-right mb4">
+
+                            <div t-if="report_type == 'pdf'">
+                                Pages:
+                                <span class="page"/>
+                                /
+                                <span class="topage"/>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </xpath>
+        </template>
+    </data>
+</openerp>

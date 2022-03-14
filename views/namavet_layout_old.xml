@@ -1,6 +1,7 @@
 <openerp>
     <data>
-        <template id="namavet_layout">
+        <template id="namavet_layout" inherit_id="web.external_layout_boxed">
+
             <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
 
                 <div class="header" style="border-bottom:2px solid #43a590; padding-bottom:10px; ">
@@ -12,7 +13,7 @@
                             <h4 class="mt0" t-field="company.report_header"/>
                             <div name="company_address" class="float-right mb4">
 
-                                <img src='/brandon/static/src/Jordan-flag.png'/>
+                                <img src='/brandon/static/src/Jordan-flag.png' />
 
                                 <!--                                <span class="company_address" t-field="company.partner_id"-->
                                 <!--                                      t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>-->
@@ -24,31 +25,34 @@
                 </div>
 
 
+                <!--                <div class="header">-->
+                <!--                    <div class="row">-->
+                <!--                        <div class="col-xs-3">-->
+                <!--                             <h5>Logo</h5>-->
+                <!--                        </div>-->
+                <!--                        <div class="col-xs-9 text-right" style="margin-top:20px;">-->
+                <!--                            <h5>Custom Header</h5>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                    <div class="row zero_min_height">-->
+                <!--                        <div class="col-xs-12">-->
+                <!--                            <div style="border-bottom: 1px solid black;"/>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
             </xpath>
 
 
-            <div t-attf-class="article o_report_layout_standard o_company_#{company.id}_layout"
-                 t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
-                 t-att-data-oe-lang="o and o.env.context.get('lang')" style="border-bottom:0px;">
-                <div class="pt-5">
-                    <!-- This div ensures that the address is not cropped by the header. -->
-                    <t t-call="web.address_layout"/>
-                </div>
-                <t t-raw="0"/>
-            </div>
-
             <xpath expr="//div[@t-attf-class='footer o_boxed_footer o_company_#{company.id}_layout']"
                    position="replace">
+                <div class="footer" style="font-size:9pt; ">
 
-                <div t-attf-class="footer o_boxed_footer" style="font-size:9pt; border-top:0px;">
-
-                    <div class="row align-middle"
-                         style="background-color:#e7e7e7; padding:3px; border-top:1px solid #ccc; color:#6f6f6f;">
+                    <div class="row align-middle" style="background-color:#e7e7e7; padding:3px; border-top:1px solid #ccc; color:#6f6f6f;">
                         <div class="col-3 " style="padding:25px;">
                             <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="130px" alt="Logo"/>
 
                         </div>
-                        <div class="col-4 text-wrap" style="border-right:solid 1px #ccc;padding:20px; ">
+                        <div class="col-4 align-middle" style="border-right:solid 1px #ccc;padding:20px; ">
                             <p>
                                 Professionals in the field of Poultry,
                                 Veterinary, Pharmacology, and
@@ -81,8 +85,9 @@
 
 
                 </div> <!-- Footer Div -->
-
             </xpath>
+
+
         </template>
     </data>
 </openerp>
