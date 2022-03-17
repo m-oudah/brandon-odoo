@@ -3,21 +3,27 @@
         <template id="hipro_layout">
             <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
 
-                <div class="header" style="border-bottom:2px solid #43a590; padding-bottom:10px; ">
+                <div class="header" style="border-bottom:1px solid #0e7ebb; padding-bottom:5px; ">
                     <div class="row">
-                        <div class="col-6">
-                            <h2>HIPRO</h2>
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="310px" alt="Logo"/>
+                        <div class="col-6" style="font-size:10px;">
+
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="250px" alt="Logo"/>
+                            <div>WE SPECIALIZE IN YOUR ANIMALS FEED</div>
+                            <div>EFFICIENCY IMPROVEMENT AND GROWTH INCREASE.</div>
                         </div>
                         <div class="col-6 text-right ">
                             <h4 class="mt0" t-field="company.report_header"/>
                             <div name="company_address" class="float-right mb4">
-
-                                <!--                                <img src='/brandon/static/src/Jordan-flag.png' />-->
-
                                 <!--                                <span class="company_address" t-field="company.partner_id"-->
-                                <!--                                      t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>-->
-
+                                <!--                                    t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>-->
+                                <strong>
+                                    <h6 t-field="company.company_registry"/>
+                                </strong>
+                                <h6 t-field="company.street2"/>
+                                <!--                                 <h6 t-if="company.street1"  t-field="company.street1"/>-->
+                                <h6 t-field="company.country_id"/>
+                                <h6 t-field="company.email"/>
+                                <!--                                 <h6 t-field="company.website"/>-->
 
                             </div>
                         </div>
@@ -39,34 +45,31 @@
             <xpath expr="//div[@t-attf-class='footer o_boxed_footer o_company_#{company.id}_layout']"
                    position="replace">
 
-                <div t-attf-class="footer o_boxed_footer"  style="border-top:1px solid #ababab; padding:10px;">
+                <div t-attf-class="footer o_boxed_footer" style="border-top:1px solid #ababab; padding:10px;">
                     <div class="row mb8">
                         <div class="col-2">
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo" width="100px"/>
+                            <img src='/brandon/static/src/iso.png' width="100px"/>
+                        </div>
+                        <div class="col-2">
+                            <img src='/brandon/static/src/hipro_qr.png' width="85px"/>
                         </div>
 
-                        <div class="col-5 text-left">
-                            <div>
-                                <span t-field="company.phone"/>
-                            </div>
-                            <div>
-                                <span t-field="company.email"/>
-                            </div>
 
-                            <div>
-                                <span t-field="company.website"/>
+                        <div class="col-10 text-right ">
+                            <div style="font-size:12px;">
+                                QUALITY CONTROL DEPARTMENT,
                             </div>
-
-
-                        </div>
-                        <div class="col-5 text-right mb4">
-
-                            <div t-if="report_type == 'pdf'">
-                                Pages:
-                                <span class="page"/>
-                                /
-                                <span class="topage"/>
-                            </div>
+                            <strong>
+                                <h5>
+                                    HIPRO IÇ VE DIS TICARET SAN.VE TIC. LTD. STI
+                                </h5>
+                            </strong>
+                            <!--                            <div t-if="report_type == 'pdf'">-->
+                            <!--                                Pages:-->
+                            <!--                                <span class="page"/>-->
+                            <!--                                /-->
+                            <!--                                <span class="topage"/>-->
+                            <!--                            </div>-->
 
                         </div>
                     </div>
