@@ -34,7 +34,7 @@
 
             <div t-attf-class="article o_report_layout_boxed o_company_#{company.id}_layout"
                  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
-                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                 t-att-data-oe-lang="o and o.env.context.get('lang')" style="margin-top:30px; background:url('/brandon/static/src/hipro_bg.png') no-repeat; background-size: contain; padding-top:40px; background-position: center;  ">
                 <div class="pt-5">
                     <!-- This div ensures that the address is not cropped by the header. -->
                     <t t-call="web.address_layout"/>
@@ -45,24 +45,29 @@
             <xpath expr="//div[@t-attf-class='footer o_boxed_footer o_company_#{company.id}_layout']"
                    position="replace">
 
-                <div t-attf-class="footer o_boxed_footer" style="border-top:1px solid #ababab; padding:10px;">
+                <div t-attf-class="footer o_boxed_footer" style="border:0px; padding:10px;">
                     <div class="row mb8">
-                        <div class="col-2">
-                            <img src='/brandon/static/src/iso.png' width="100px"/>
+                        <div class="col-1"  style="margin-right:5px;">
+                            <img src='/brandon/static/src/iso.png' width="80px"/>
                         </div>
-                        <div class="col-2">
-                            <img src='/brandon/static/src/hipro_qr.png' width="85px"/>
+                        <div class="col-1" >
+                            <img src='/brandon/static/src/hipro_qr.png' width="65px"/>
+
+                        </div>
+                        <div class="col-6" style="border-bottom:5px solid #fbb823; margin-left:10px;">
+
+
                         </div>
 
 
-                        <div class="col-10 text-right ">
-                            <div style="font-size:12px;">
+                        <div class="col-4 text-center" style="border-top:1px solid #000; padding:10px; color:#000; ">
+                            <div style="font-size:15px;">
                                 QUALITY CONTROL DEPARTMENT,
                             </div>
                             <strong>
-                                <h5>
+                                <h6>
                                     HIPRO IÇ VE DIS TICARET SAN.VE TIC. LTD. STI
-                                </h5>
+                                </h6>
                             </strong>
                             <!--                            <div t-if="report_type == 'pdf'">-->
                             <!--                                Pages:-->
