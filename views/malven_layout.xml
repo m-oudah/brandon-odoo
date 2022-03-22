@@ -1,6 +1,6 @@
 <openerp>
     <data>
-        <template id="addvet_layout">
+        <template id="malven_layout">
             <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
 
                 <div class="header"
@@ -57,7 +57,7 @@
                                     <li>
                                         <span>
                                             <img src='/brandon/static/src/whatsapp.png' width="20px"/>
-                                          <span t-field="company.phone"/>
+                                            +962 6 552 4994
                                         </span>
 
 
@@ -66,7 +66,7 @@
                                     <li>
                                         <span>
                                             <img src='/brandon/static/src/website.png' width="20px"/>
-                                            <a href="mailto:info@addvet.net"><span t-field="company.email"/></a>
+                                            <a href="mailto:info@addvet.net">info@addvet.net</a>
                                         </span>
 
                                     </li>
