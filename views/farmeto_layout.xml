@@ -1,32 +1,27 @@
 <openerp>
     <data>
-        <template id="brandvet_layout">
+        <template id="farmeto_layout">
             <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
 
                 <div class="header"
-                     style="padding-bottom:10px;  vertical-align:middle; font-family:Oswald,Calibri; ">
+                     style="padding-bottom:10px;  ">
                     <div class="row align-middle">
-                        <div class="col-3">
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="110px"
-                                 alt="Brandvet Logo"/>
-                        </div>
-                        <div class="col-9 text-right" style="border-bottom:4px solid #1e90b3;">
-                            <!--                            <h4 class="mt0" t-field="company.report_header"/>-->
+                        <div class="col-9" style="border-bottom:1px solid #7e353e;">
                             <div name="company_address" style=" font-size:12pt; padding-top:35px;">
                                 <ul class="list-unstyled ">
                                     <li>
-                                        <span>
-<!--                                            <img src='/brandon/static/src/location.png' width="20px"/>-->
-                                            İstanbul / Turkey
-                                        </span>
+                                        <span style="color:#7e353e; font-weight:bold; "
+                                              t-field="company.company_registry"/>
                                     </li>
                                     <li>
-<!--                                        <img src='/brandon/static/src/whatsapp.png' width="20px"/>-->
+                                        <span t-field="company.street"/>
+                                    </li>
+                                    <li>
                                         <span t-field="company.phone"/>
                                     </li>
 
                                     <li>
-<!--                                        <img src='/brandon/static/src/website.png' width="20px"/>-->
+                                        <!--                                        <img src='/brandon/static/src/website.png' width="20px"/>-->
                                         <span t-field="company.email"/>
                                     </li>
 
@@ -38,9 +33,15 @@
 
                             </div>
                         </div>
+                        <div class="col-3 ">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="200px"
+                                 alt="Farmeto Logo"/>
+
+                            <!--                            <h4 class="mt0" t-field="company.report_header"/>-->
+
+                        </div>
                     </div>
                 </div>
-
 
             </xpath>
 
@@ -61,35 +62,38 @@
                 <div class="footer">
 
 
-                    <div class="row align-middle"
-                         style="color:#555; font-family:Oswald,Calibri;  ">
+                    <div class="row align-middle">
 
+                        <div class="col-2">
+                            <img src='/brandon/static/src/farmeto_qr.png' width="110px"/>
+                        </div>
 
-                        <div class="col-10 float-left " style="padding:3px;  border-top:4px solid #1e90b3; ">
+                        <div class="col-6 float-left " style="padding:3px;  ">
 
                             <ul class="list-unstyled ">
                                 <li>
-                                    <img src='/brandon/static/src/location.png' width="20px"/>
-                                    <span>
-                                        İstanbul / Turkey
-                                    </span>
+                                    <span style="color: #7e353e; font-wight:bold;" t-field="company.name"/>
                                 </li>
                                 <li>
-                                    <img src='/brandon/static/src/whatsapp.png' width="20px"/>
-                                    <span t-field="company.phone"/>
+                                    <span t-field="company.street"/>
                                 </li>
 
                                 <li>
-                                    <img src='/brandon/static/src/website.png' width="20px"/>
-                                    <span t-field="company.website"/>
+                                    <span t-field="company.phone"/>
+                                </li>
+                                <li>
+                                    <span t-field="company.email"/>
                                 </li>
 
                             </ul>
 
                         </div>
-                        <div class="col-2">
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="90px"
-                                 alt="Brandvet Logo"/>
+
+                        <div class="col-4 float-right">
+                            <div>A WORLD-WIDE</div>
+                            <div>VETERINARY ORGANIZATION</div>
+                            <hr/>
+                            <div style="color: #7e353e; font-wight:bold;" t-field="company.website"/>
                         </div>
 
 

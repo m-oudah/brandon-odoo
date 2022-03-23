@@ -33,6 +33,7 @@
         'views/brandvet_layout.xml',
         'views/malven_layout.xml',
         'views/namavet_layout.xml',
+        'views/farmeto_layout.xml',
         'views/maxvet_layout.xml',
         'views/hipro_layout.xml',
         'views/namavet_report_saleorder_document.xml',
