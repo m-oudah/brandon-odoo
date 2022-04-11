@@ -3,29 +3,59 @@
         <template id="hipro_layout">
             <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
 
-                <div class="header" style="border-bottom:1px solid #0e7ebb; padding-bottom:5px; ">
+                <div class="header" style="padding-bottom:5px; ">
                     <div class="row">
                         <div class="col-6" style="font-size:10px;">
 
                             <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="250px" alt="Logo"/>
-                            <div>WE SPECIALIZE IN YOUR ANIMALS FEED</div>
-                            <div>EFFICIENCY IMPROVEMENT AND GROWTH INCREASE.</div>
+                            <!--                            <div>WE SPECIALIZE IN YOUR ANIMALS FEED</div>-->
+                            <!--                            <div>EFFICIENCY IMPROVEMENT AND GROWTH INCREASE.</div>-->
                         </div>
-                        <div class="col-6 text-right ">
-                            <h4 class="mt0" t-field="company.report_header"/>
-                            <div name="company_address" class="float-right mb4">
-                                <!--                                <span class="company_address" t-field="company.partner_id"-->
-                                <!--                                    t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>-->
-                                <strong>
-                                    <h6 t-field="company.company_registry"/>
-                                </strong>
-                                <h6 t-field="company.street2"/>
-                                <!--                                 <h6 t-if="company.street1"  t-field="company.street1"/>-->
-                                <h6 t-field="company.country_id"/>
-                                <h6 t-field="company.email"/>
-                                <!--                                 <h6 t-field="company.website"/>-->
+                        <div class="col-3" style="border-right:2px #007ab4 solid;">
 
-                            </div>
+                            <ul class="list-unstyled ">
+                                <li>
+                                    <span style="color:#007ab4; font-weight:bold; ">Issued by</span>
+                                </li>
+                                <li>
+                                    <span t-field="company.company_registry"/>
+                                </li>
+                                <!--                                <li>-->
+                                <!--                                    <span t-field="company.street"/>,-->
+                                <!--                                    <span t-field="company.street2"/>-->
+                                <!--                                </li>-->
+                                <!--                                <li>-->
+                                <!--                                    <span t-field="company.zip"/>,<span t-field="company.state_id"/>,-->
+                                <!--                                    <span t-field="company.country_id"/>-->
+                                <!--                                </li>-->
+
+
+                            </ul>
+
+
+                        </div>
+                        <div class="col-3 text-right ">
+                            <ul class="list-unstyled ">
+                                <li>
+                                    <span style="color:#007ab4; font-weight:bold; ">Contact Information</span>
+                                </li>
+
+                                <li>
+                                    Email:
+                                    <span t-field="company.email"/>
+                                </li>
+
+                                <li>
+                                    Tel:
+                                    <span t-field="company.phone"/>
+                                </li>
+                                <li>
+
+                                    <span t-field="company.website"/>
+                                </li>
+
+                            </ul>
+
                         </div>
                     </div>
                 </div>
@@ -34,7 +64,8 @@
 
             <div t-attf-class="article o_report_layout_boxed o_company_#{company.id}_layout"
                  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
-                 t-att-data-oe-lang="o and o.env.context.get('lang')" style="margin-top:30px; background:url('/brandon/static/src/hipro_bg.png') no-repeat; background-size: contain; padding-top:40px; background-position: center;  ">
+                 t-att-data-oe-lang="o and o.env.context.get('lang')"
+                 style="margin-top:30px; background:url('/brandon/static/src/hipro_bg.png') no-repeat; background-size: contain; padding-top:40px; background-position: center;  ">
                 <div class="pt-5">
                     <!-- This div ensures that the address is not cropped by the header. -->
                     <t t-call="web.address_layout"/>
@@ -47,36 +78,36 @@
 
                 <div t-attf-class="footer o_boxed_footer" style="border:0px; padding:10px;">
                     <div class="row mb8">
-                        <div class="col-1"  style="margin-right:5px;">
-                            <img src='/brandon/static/src/iso.png' width="80px"/>
-                        </div>
-                        <div class="col-1" >
-                            <img src='/brandon/static/src/hipro_qr.png' width="65px"/>
+                        <div class="col-10">
+
+                            <ul class="list-unstyled ">
+                                <li>
+                                    <span style="color:#007ab4; font-weight:bold; ">HIPRO-FEED.COM</span>
+                                </li>
+
+                                <li>
+                                    <span t-field="company.street"/>,
+                                    <span t-field="company.street2"/>
+                                </li>
+                                <li>
+                                    <span t-field="company.state_id"/>,
+                                    <span t-field="company.country_id"/>
+                                </li>
+                                <li>
+                                    Email:
+                                    <span t-field="company.email"/>
+                                </li>
+
+                            </ul>
+
 
                         </div>
-                        <div class="col-5" style="border-bottom:5px solid #fbb823; margin-left:5px;">
-
-
-                        </div>
-
-
-                        <div class="col-5 text-center" style="border-top:1px solid #000; padding-top:10px; color:#000; ">
-                            <div style="font-size:15px;">
-                                QUALITY CONTROL DEPARTMENT,
-                            </div>
-                            <strong>
-                                <h6>
-                                    HIPRO IÇ VE DIS TICARET SAN.VE TIC. LTD. STI
-                                </h6>
-                            </strong>
-                            <!--                            <div t-if="report_type == 'pdf'">-->
-                            <!--                                Pages:-->
-                            <!--                                <span class="page"/>-->
-                            <!--                                /-->
-                            <!--                                <span class="topage"/>-->
-                            <!--                            </div>-->
+                        <div class="col-2">
+                            <img src='/brandon/static/src/hipro_qr.png' width="100px"/>
 
                         </div>
+
+
                     </div>
                 </div>
 

@@ -7,7 +7,7 @@
                      style="padding-bottom:10px;  vertical-align:middle; font-family:Oswald,Calibri; ">
                     <div class="row align-middle">
                         <div class="col-3">
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="110px"
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="120px"
                                  alt="Brandvet Logo"/>
                         </div>
                         <div class="col-9 text-right" style="border-bottom:4px solid #1e90b3;">
@@ -17,7 +17,7 @@
                                     <li>
                                         <span>
 <!--                                            <img src='/brandon/static/src/location.png' width="20px"/>-->
-                                            İstanbul / Turkey
+                                             <span t-field="company.state_id"/> /  <span t-field="company.country_id"/>
                                         </span>
                                     </li>
                                     <li>
@@ -71,7 +71,7 @@
                                 <li>
                                     <img src='/brandon/static/src/location.png' width="20px"/>
                                     <span>
-                                        İstanbul / Turkey
+                                          <span t-field="company.state_id"/> /  <span t-field="company.country_id"/>
                                     </span>
                                 </li>
                                 <li>
