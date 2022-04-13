@@ -4,10 +4,10 @@
             <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
 
                 <div class="header"
-                     style="padding-bottom:10px;  ">
+                     style="padding-bottom:5px;  ">
                     <div class="row align-middle">
                         <div class="col-8" style="border-bottom:1px solid #7e353e;">
-                            <div name="company_address" style=" font-size:12pt; font-weight:normal; padding-top:35px;">
+                            <div name="company_address" style=" font-size:12pt; font-weight:normal; ">
                                 <ul class="list-unstyled ">
                                     <li>
                                         <span style="color:#7e353e; font-weight:bold; "
@@ -19,15 +19,16 @@
                                     </li>
                                     <li>
                                         <span t-field="company.zip"/>,<span t-field="company.state_id"/>,
-                                        <span t-field="company.country_id"/>
+                                         <span t-field="company.country_id"/>
                                     </li>
                                     <li>
-                                        Tel: <span t-field="company.phone"/>
+                                        Tel:
+                                        <span t-field="company.phone"/>
                                     </li>
 
                                     <li>
-                                        <!--             <img src='/brandon/static/src/website.png' width="20px"/>-->
-                                       Email: <span t-field="company.email"/>
+                                        Email:
+                                        <span t-field="company.email"/>
                                     </li>
 
                                 </ul>
@@ -39,7 +40,7 @@
                             </div>
                         </div>
                         <div class="col-4 float-right">
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="250px"
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="240px"
                                  alt="Farmeto Logo"/>
 
                             <!--                            <h4 class="mt0" t-field="company.report_header"/>-->
@@ -81,10 +82,7 @@
                                 </li>
                                 <li>
                                     <span t-field="company.street"/>,
-                                    <span t-field="company.street2"/>
-                                </li>
-
-                                <li>
+                                    <span t-field="company.street2"/>,
                                     <span t-field="company.zip"/>,
                                     <span t-field="company.state_id"/>
                                 </li>
