@@ -42,14 +42,22 @@
                         <!--    <span t-field="doc.name"/>-->
                         <!--</h4>-->
 
-                        <div class="row" style=" padding-bottom:20px; margin:0px; margin-top:20px; ">
+                        <div class="row" style=" padding-bottom:10px; margin:0px; margin-top:10px; ">
 
-                            <div class="col-3">
-                                <h6>SHIP TO/BILL TO:</h6>
+                            <div class="col-auto col-6 mw-100 mb-2">
+                                <strong style="color:#000">Bill To:</strong>
+                                <div t-field="doc.partner_id"
+                                     t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
                             </div>
-                            <div class="col-9 text-left">
-                                <h6 t-field="doc.partner_id"
-                                    t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
+
+                            <div t-if="doc.origin_country" class="col-auto col-3 mw-100 mb-2 text-center">
+                                <strong style="color:#000">Origin Country:</strong>
+                                <p class="m-0" t-field="doc.origin_country"/>
+                            </div>
+
+                            <div t-if="doc.ship_to" class="col-auto col-3 mw-100 mb-2 text-center">
+                                <strong style="color:#000">Ship To:</strong>
+                                <p class="m-0" t-field="doc.ship_to"/>
                             </div>
 
                             <!--                            <div class="col-3 text-right">-->
@@ -87,14 +95,11 @@
                                 <strong>Quotation No:</strong>
                                 <p class="m-0" t-field="doc.name"/>
                             </div>
-                             <div t-if="env.context.get('proforma', False) or is_pro_forma"
+                            <div t-if="env.context.get('proforma', False) or is_pro_forma"
                                  class="col-auto col-3 mw-100 mb-2 text-center" style="border-right:1px solid #919191;">
                                 <strong>PRO-FORMA INVOICE No:</strong>
                                 <p class="m-0" t-field="doc.name"/>
                             </div>
-
-
-
 
 
                             <div t-if="doc.date_order and doc.state not in ['draft','sent']"
@@ -120,6 +125,7 @@
                                 <p class="m-0" t-field="doc.user_id"/>
                             </div>
                         </div>
+
 
                         <!-- Is there a discount on at least one line? -->
                         <t t-set="display_discount" t-value="any(l.discount for l in doc.order_line)"/>

@@ -21,7 +21,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale','product'],
+    'depends': ['sale','base','product'],
 
     # always loaded
     'data': [
@@ -38,6 +38,7 @@
         'views/hipro_layout.xml',
         'views/fertizone_layout.xml',
         'views/namavet_report_saleorder_document.xml',
+        'views/saleUpdate.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
