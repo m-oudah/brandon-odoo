@@ -4,31 +4,30 @@
             <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
 
                 <div class="header"
-                     style="border-bottom:2px solid #9a9a9a; padding-bottom:10px;  vertical-align:middle; font-family:Oswald,Calibri; ">
+                     style="border-bottom:1px solid #9a9a9a; padding-bottom:20px; padding-top:20px; vertical-align:middle;">
                     <div class="row align-middle">
-                        <div class="col-7">
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="110px"
-                                 alt="Addvet Logo"/>
+                        <div class="col-3" style="border-right:1px solid #9f9f9f; padding-right:40px;">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="200px"
+                                 alt="Malven Logo"/>
                         </div>
-                        <div class="col-5 " style="vertical-align:middle;">
-                            <h4 class="mt0" t-field="company.report_header"/>
-                            <div name="company_address"
-                                 style="padding-top:40px; font-size:18pt;">
-
-                                <h4>A Jordanian Animal Health Company</h4>
-
-                                <!--                                <span class="company_address" t-field="company.partner_id"-->
-                                <!--                                      t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>-->
-
-
-                            </div>
+                        <div class="col-9" style="vertical-align:middle; padding-left:40px; padding-top:20px;">
+                            <ul class="list-unstyled ">
+                                <li>
+                                    <span t-field="company.company_registry"/>
+                                </li>
+                                <li>
+                                    <span t-field="company.street"/>,
+                                    <span t-field="company.street2"/>
+                                </li>
+                                <li>
+                                    <span t-field="company.zip"/>,<span t-field="company.state_id"/>,
+                                    <span t-field="company.country_id"/>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
-
             </xpath>
-
 
             <div t-attf-class="article o_report_layout_boxed o_company_#{company.id}_layout"
                  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
@@ -42,60 +41,28 @@
 
             <xpath expr="//div[@t-attf-class='footer o_boxed_footer o_company_#{company.id}_layout']"
                    position="replace">
-
                 <div class="footer">
 
-                    <div class="row align-middle"
-                         style=" padding:2px; color:#555;  border-top:2px solid #9a9a9a; font-family:Oswald,Calibri;  ">
-                        <div class="col-10 float-left " style="padding:15px;">
-                            <p>AFAQ ADDITIVES FEED CO. [Registration No. 1748]</p>
+                    <div class="row" style="padding-bottom:10px; margin:0px; margin-top:10px; ">
 
-
-                            <div class="col-md-6 mb-4">
-
-                                <ul class="list-unstyled ">
-                                    <li>
-                                        <span>
-                                            <img src='/brandon/static/src/whatsapp.png' width="20px"/>
-                                            +962 6 552 4994
-                                        </span>
-
-
-                                    </li>
-
-                                    <li>
-                                        <span>
-                                            <img src='/brandon/static/src/website.png' width="20px"/>
-                                            <a href="mailto:info@addvet.net">info@addvet.net</a>
-                                        </span>
-
-                                    </li>
-
-                                    <li>
-                                        <span>
-                                            <img src='/brandon/static/src/location.png' width="20px"/>
-                                            Industrial Zone [124] - AlZarqa - Amman- Jordan
-                                        </span>
-
-                                    </li>
-
-
-                                </ul>
-
-
-                            </div>
-
+                        <div class="col-auto col-2 mb-2">
+                            <img src='/brandon/static/src/farmeto_qr.png' width="100px"/>
+                        </div>
+                        <div class="col-auto col-8  mb-2">
+                            <div>Thank You For Your Business</div>
+                               <span t-field="company.phone" style="padding-right:20px;"/>
+                              <span t-field="company.email" style="padding-right:20px;"/>
+                             <div t-field="company.website" style="color:#f8a61a; font-size:18pt; "/>
+                        </div>
+                        <div class="col-auto col-2 mb-2">
+                          <img src='/brandon/static/src/malven_logo2.png' width="100px"/>
                         </div>
 
-                        <div class="col-2 float-right" style="padding:25px; vertical-align:middle;">
-                            <img src='/brandon/static/src/addvet_qr.png' width="80px"/>
-                        </div>
                     </div>
 
-
-                </div> <!-- Footer Div -->
-
+                </div><!-- Footer Div -->
             </xpath>
+
         </template>
     </data>
 </openerp>

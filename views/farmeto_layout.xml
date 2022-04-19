@@ -64,10 +64,7 @@
 
             <xpath expr="//div[@t-attf-class='footer o_boxed_footer o_company_#{company.id}_layout']"
                    position="replace">
-
                 <div class="footer">
-
-
                     <div class="row align-middle">
 
                         <div class="col-2">
