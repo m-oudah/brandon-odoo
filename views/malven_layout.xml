@@ -46,16 +46,18 @@
                     <div class="row" style="padding-bottom:10px; margin:0px; margin-top:10px; ">
 
                         <div class="col-auto col-2 mb-2">
-                            <img src='/brandon/static/src/farmeto_qr.png' width="100px"/>
+                            <img src='/brandon/static/src/malven_qr.png' width="100px"/>
                         </div>
                         <div class="col-auto col-8  mb-2">
-                            <div>Thank You For Your Business</div>
-                               <span t-field="company.phone" style="padding-right:20px;"/>
-                              <span t-field="company.email" style="padding-right:20px;"/>
-                             <div t-field="company.website" style="color:#f8a61a; font-size:18pt; "/>
+                            <div style="padding-bottom:10px;">Thank You For Your Business</div>
+                            <span><img src="/brandon/static/src/phone.png" width="20px"></img></span>
+                            <span t-field="company.phone" style="padding-right:50px;padding-top:10px;"/>
+                             <span><img src="/brandon/static/src/email.png" width="30px"></img></span>
+                            <span t-field="company.email" style="padding-right:40px; padding-top:10px;"/>
+                            <div  style="color:#f8a61a; font-size:18pt; padding-top:7px; "> MALVEN.NET</div>
                         </div>
                         <div class="col-auto col-2 mb-2">
-                          <img src='/brandon/static/src/malven_logo2.png' width="100px"/>
+                            <img src='/brandon/static/src/malven_logo2.png' width="100px"/>
                         </div>
 
                     </div>
