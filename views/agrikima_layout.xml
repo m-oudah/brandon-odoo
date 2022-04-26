@@ -1,0 +1,88 @@
+<openerp>
+    <data>
+        <template id="agrikima_layout">
+            <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
+
+                <div class="header" style="border-bottom:2px solid #095940; padding-bottom:5px; ">
+                    <div class="row">
+                        <div class="col-6">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="210px" alt="Logo"/>
+                        </div>
+                        <div class="col-6 text-right ">
+                            <h4 class="mt0" t-field="company.report_header"/>
+                            <div name="company_address" class="float-right mb4">
+
+                                <!--                                <img src='/brandon/static/src/Jordan-flag.png'/>-->
+                                <h2 style="color:#095940; padding:50px;">AGRIKIMA</h2>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </xpath>
+
+
+            <div t-attf-class="article o_report_layout_boxed o_company_#{company.id}_layout"
+                 t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')"
+                 style="margin-top:30px; background:url('/brandon/static/src/agrikima_bg.png') no-repeat; background-size: contain; padding-top:40px; background-position: center;  ">
+                <div class="pt-5">
+                    <!-- This div ensures that the address is not cropped by the header. -->
+                    <t t-call="web.address_layout"/>
+                </div>
+                <t t-raw="0"/>
+            </div>
+
+            <xpath expr="//div[@t-attf-class='footer o_boxed_footer o_company_#{company.id}_layout']"
+                   position="replace">
+
+                <div t-attf-class="footer o_boxed_footer" style="font-size:9pt; border-top:0px;">
+
+                    <div class="row align-middle"
+                         style="">
+                        <div class="col-3 " style="padding:15px;">
+                            <img src='/brandon/static/src/agrikima_footer.png' width="200px"/>
+                        </div>
+                        <!--                        <div class="col-4 text-wrap" style="border-right:solid 1px #ccc;padding:20px; ">-->
+                        <!--                            <p>-->
+                        <!--                                Professionals in the field of Poultry,-->
+                        <!--                                Veterinary, Pharmacology, and-->
+                        <!--                                Animal Health Care.-->
+                        <!--                            </p>-->
+                        <!--                        </div>-->
+                        <div class="col-7 align-middle" style=" padding-left:20px; padding-top:1px; ">
+                            <p>
+                                <span class="company_address" t-field="company.partner_id"
+                                      t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
+                            </p>
+                        </div>
+                        <div class="col-2 " style="padding:10px;">
+                            <img src='/brandon/static/src/agrikima_qr.png' width="85px"/>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="background-color:#095940; padding:5px; color:#fff;">
+
+                        <div class="col-9 align-middle" style="padding-top:5px; padding-left:20px;">
+                            <p>
+                                <span t-field="company.company_registry"/>
+                            </p>
+                        </div>
+                        <div class="col-3 align-middle" style="padding-top:5px;">
+                            <p>
+                                <span t-field="company.website"/>
+
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div> <!-- Footer Div -->
+
+            </xpath>
+        </template>
+    </data>
+</openerp>

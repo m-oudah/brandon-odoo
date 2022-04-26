@@ -11,7 +11,7 @@
                                  alt="Fertizone Logo"/>
                         </div>
                         <div class="col-8 float-right">
-                         </div>
+                        </div>
                     </div>
                 </div>
 
@@ -20,7 +20,8 @@
 
             <div t-attf-class="article o_report_layout_boxed o_company_#{company.id}_layout"
                  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
-                 t-att-data-oe-lang="o and o.env.context.get('lang')" style="border-bottom:0px;">
+                 t-att-data-oe-lang="o and o.env.context.get('lang')"
+                 style="margin-top:30px; background:url('/brandon/static/src/fertizone_bg.png') no-repeat; background-size: contain; padding-top:40px; background-position: center;  ">
                 <div class="pt-5">
                     <!-- This div ensures that the address is not cropped by the header. -->
                     <t t-call="web.address_layout"/>
@@ -34,7 +35,8 @@
                 <div class="footer">
 
 
-                    <div class="row align-middle" style="font-weight:400; font-size:10pt; border-top:1px dotted #51645c; padding-top:10px; ">
+                    <div class="row align-middle"
+                         style="font-weight:400; font-size:10pt; border-top:1px dotted #51645c; padding-top:10px; ">
 
                         <div class="col-3">
 

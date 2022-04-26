@@ -6,8 +6,8 @@
                 <div class="header"
                      style="border-bottom:1px solid #9a9a9a; padding-bottom:20px; padding-top:20px; vertical-align:middle;">
                     <div class="row align-middle">
-                        <div class="col-3" style="border-right:1px solid #9f9f9f; padding-right:40px;">
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="200px"
+                        <div class="col-3" style="border-right:1px solid #9f9f9f;">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="200px" style="padding-right:30px;"
                                  alt="Malven Logo"/>
                         </div>
                         <div class="col-9" style="vertical-align:middle; padding-left:40px; padding-top:20px;">

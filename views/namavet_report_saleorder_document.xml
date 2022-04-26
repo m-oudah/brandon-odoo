@@ -47,7 +47,7 @@
                             <div class="col-auto col-6 mw-100 mb-2">
                                 <strong style="color:#000">Bill To:</strong>
                                 <div t-field="doc.partner_id"
-                                   t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
+                                     t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
                             </div>
 
                             <div t-if="doc.origin_country" class="col-auto col-3 mw-100 mb-2 text-center">
@@ -55,8 +55,8 @@
                                 <p class="m-0" t-field="doc.origin_country"/>
                             </div>
 
-                            <div  t-if="doc.ship_to" class="col-auto col-3 mw-100 mb-2 text-center">
-                                <strong style="color:#000">Ship To:</strong>
+                            <div t-if="doc.ship_to" class="col-auto col-3 mw-100 mb-2 text-center">
+                                <strong style="color:#000">Destination Port:</strong>
                                 <p class="m-0" t-field="doc.ship_to"/>
                             </div>
 
@@ -246,7 +246,7 @@
                                             </td>
                                         </tr>
                                         <t t-foreach="doc.amount_by_group" t-as="amount_by_group">
-                                            <tr style="">
+                                            <tr >
                                                 <t t-if="amount_by_group[5] == 1 and doc.amount_untaxed == amount_by_group[2]">
                                                     <td name="td_amount_by_group_label_3">
                                                         <span t-esc="amount_by_group[0]"/>
@@ -286,30 +286,44 @@
                         </div>
 
 
-                        <div t-if="doc.signature" class="mt32 ml64 mr4" name="signature">
-                            <div class="offset-8">
-                                <strong>Signature</strong>
-                            </div>
-                            <div class="offset-8">
-                                <img t-att-src="image_data_uri(doc.signature)"
-                                     style="max-height: 4cm; max-width: 8cm;"/>
-                            </div>
-                            <div class="offset-8 text-center">
-                                <p t-field="doc.signed_by"/>
-                            </div>
+                           <div class="row" style="padding:20px;">
+                            <table width="100%" style="border:none;">
+                                <tbody >
+                                    <tr >
+                                        <td style="border:none;" >
+                                            <div class="oe_structure"/>
+                                            <p t-field="doc.note"/>
+                                            <p t-if="doc.payment_term_id.note">
+                                                <span t-field="doc.payment_term_id.note"/>
+                                            </p>
+                                            <p id="fiscal_position_remark"
+                                               t-if="doc.fiscal_position_id and doc.fiscal_position_id.sudo().note">
+                                                <strong>Fiscal Position Remark:</strong>
+                                                <span t-field="doc.fiscal_position_id.sudo().note"/>
+                                            </p>
+                                        </td>
+                                        <td class="align-bottom" style="border:none;" width="30%">
+                                            <div t-if="doc.signature" name="signature">
+                                                <div class="offset-8">
+                                                    <!--                                        <strong>Signature</strong>-->
+                                                </div>
+                                                <div class="text-center">
+                                                    <img t-att-src="image_data_uri(doc.signature)"
+                                                         style="max-height: 4cm; max-width: 8cm;"/>
+                                                </div>
+                                                <div class="text-center">
+                                                    <p t-field="doc.signed_by"/>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
                         </div>
 
-                        <div class="oe_structure"/>
 
-                        <p t-field="doc.note"/>
-                        <p t-if="doc.payment_term_id.note">
-                            <span t-field="doc.payment_term_id.note"/>
-                        </p>
-                        <p id="fiscal_position_remark"
-                           t-if="doc.fiscal_position_id and doc.fiscal_position_id.sudo().note">
-                            <strong>Fiscal Position Remark:</strong>
-                            <span t-field="doc.fiscal_position_id.sudo().note"/>
-                        </p>
+
                     </div>
                 </t>
 

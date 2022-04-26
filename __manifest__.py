@@ -36,6 +36,7 @@
         'views/farmeto_layout.xml',
         'views/maxvet_layout.xml',
         'views/hipro_layout.xml',
+        'views/agrikima_layout.xml',
         'views/fertizone_layout.xml',
         'views/namavet_report_saleorder_document.xml',
         'views/saleUpdate.xml',
