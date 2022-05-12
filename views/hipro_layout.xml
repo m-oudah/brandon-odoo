@@ -5,7 +5,7 @@
 
                 <div class="header" style="padding-bottom:5px; ">
                     <div class="row">
-                        <div class="col-6" style="font-size:10px;">
+                        <div class="col-5" style="font-size:10px;">
 
                             <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="250px" alt="Logo"/>
                             <!--                            <div>WE SPECIALIZE IN YOUR ANIMALS FEED</div>-->
@@ -34,7 +34,7 @@
 
 
                         </div>
-                        <div class="col-3 text-right ">
+                        <div class="col-4 ">
                             <ul class="list-unstyled ">
                                 <li>
                                     <span style="color:#007ab4; font-weight:bold; ">Contact Information</span>

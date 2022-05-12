@@ -27,8 +27,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
-        'views/saleOrderReport.xml',
-        # 'views/addvet_layout_old.xml',
+        # 'views/saleOrderReport.xml',
         'views/addvet_layout.xml',
         'views/brandvet_layout.xml',
         'views/malven_layout.xml',
@@ -38,7 +37,7 @@
         'views/hipro_layout.xml',
         'views/agrikima_layout.xml',
         'views/fertizone_layout.xml',
-        'views/namavet_report_saleorder_document.xml',
+        'views/brandon_report_saleorder_document.xml',
         'views/saleUpdate.xml',
     ],
     # only loaded in demonstration mode
