@@ -39,6 +39,7 @@
         'views/fertizone_layout.xml',
         'views/brandon_report_saleorder_document.xml',
         'views/saleUpdate.xml',
+        'views/simya_layout.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

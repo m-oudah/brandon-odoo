@@ -1,18 +1,26 @@
 <openerp>
     <data>
-        <template id="agrikima_layout">
+        <template id="simya_layout">
             <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
 
-                <div class="header" style="border-bottom:2px solid #095940; padding-bottom:5px; ">
-                    <div class="row">
-                        <div class="col-6">
-                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="210px" alt="Logo"/>
+                <div class="header" >
+                     <div class="row">
+                        <div class="col-7" style="background-color: #808285;">
                         </div>
-                        <div class="col-6 text-right ">
-                            <h4 class="mt0" t-field="company.report_header"/>
-                            <div name="company_address" class="float-right mb4">
+                        <div class="col-5 text-right " style="background-color:#a6ce39;">
+                            <div>
+                                <h4 style="color:#fff; padding:20px;">SIMYAPHARMA.COM</h4>
+                            </div>
+                        </div>
+                     </div>
 
-                                <h2 style="color:#095940; padding:50px;">AGRIKIMA</h2>
+
+                    <div class="row">
+                        <div class="col-4" style="padding:10px;">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width="270px" alt="Simya Logo"/>
+                        </div>
+                        <div class="col-8 text-right ">
+                            <div style="border-bottom:10px solid #d1d2d4; height:100px;">
 
                             </div>
                         </div>
@@ -26,7 +34,7 @@
             <div t-attf-class="article o_report_layout_boxed o_company_#{company.id}_layout"
                  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
                  t-att-data-oe-lang="o and o.env.context.get('lang')"
-                 style="margin-top:30px; background:url('/brandon/static/src/agrikima_bg.png') no-repeat; background-size: contain; padding-top:40px; background-position: center;  ">
+                 style="margin-top:30px; background:url('/brandon/static/src/simya_bg.png') no-repeat; background-size: contain; padding-top:40px; background-position: center;  ">
                 <div class="pt-5">
                     <!-- This div ensures that the address is not cropped by the header. -->
                     <t t-call="web.address_layout"/>
@@ -51,29 +59,38 @@
                         <!--                                Animal Health Care.-->
                         <!--                            </p>-->
                         <!--                        </div>-->
-                        <div class="col-7 align-middle" style=" padding-left:20px; padding-top:1px; ">
-                            <p>
-                                <span class="company_address" t-field="company.partner_id"
-                                      t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"/>
-                            </p>
+                        <div class="col-5 " >
+                           <ul>
+                               <li> <span t-field="company.street"/> </li>
+                                <li> <span t-field="company.phone"/> </li>
+
+                           </ul>
                         </div>
-                        <div class="col-2 " style="padding:10px;">
-                            <img src='/brandon/static/src/agrikima_qr.png' width="85px"/>
+                        <div class="col-5 " >
+                            <ul>
+                               <li> <span t-field="company.email"/>  </li>
+                               <li><span t-field="company.website"/></li>
+                           </ul>
                         </div>
                     </div>
 
 
-                    <div class="row" style="background-color:#095940; padding:5px; color:#fff;">
+                    <div class="row" >
 
-                        <div class="col-9 align-middle" style="padding-top:5px; padding-left:20px;">
+                        <div class="col-3 align-middle" style="background-color:#939598; padding:5px; ">
                             <p>
-                                <span t-field="company.company_registry"/>
                             </p>
                         </div>
-                        <div class="col-3 align-middle" style="padding-top:5px;">
+                        <div class="col-3 align-middle" style="background-color:#a6ce39; padding:5px; ">
                             <p>
-                                <span t-field="company.website"/>
-
+                            </p>
+                        </div>
+                        <div class="col-3 align-middle" style="background-color:#7eaa31; padding:5px; ">
+                            <p>
+                            </p>
+                        </div>
+                        <div class="col-3 align-middle" style="background-color:#77787b; padding:5px; ">
+                            <p>
                             </p>
                         </div>
                     </div>

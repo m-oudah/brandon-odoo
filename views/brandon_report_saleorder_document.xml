@@ -41,7 +41,17 @@
                         <!--    </t>-->
                         <!--    <span t-field="doc.name"/>-->
                         <!--</h4>-->
+                          <div class="row" style=" padding-bottom:5px; margin:0px; margin-top:5px;  ">
+                              <div class="col-auto col-4"></div>
 
+                              <div class="col-auto col-4 mb-2 text-center" style="border-bottom:1px #919191 solid;">
+                                <h2 t-if="doc.date_order and doc.state in ['draft','sent']  " style="color:#000">QUOTATION </h2>
+                                <h2 t-if="doc.date_order and doc.state not in ['draft','sent']" style="color:#000">SALE ORDER </h2>
+<!--                                <h2 t-if="env.context.get('proforma', False) or is_pro_forma" style="color:#000">PRO-FORMA INVOICE </h2>-->
+                            </div>
+
+                              <div class="col-auto col-4"></div>
+                          </div>
                         <div class="row" style=" padding-bottom:10px; margin:0px; margin-top:10px; ">
 
                             <div class="col-auto col-6 mw-100 mb-2">
@@ -87,7 +97,7 @@
                             <div t-if="doc.date_order and doc.state not in ['draft','sent']"
                                  class="col-auto col-3 mw-100 mb-2  text-center"
                                  style="border-right:1px solid #919191;">
-                                <strong>ORDER NO:</strong>
+                                <strong>Order No:</strong>
                                 <p class="m-0" t-field="doc.name"/>
                             </div>
                             <div t-if="doc.date_order and doc.state in ['draft','sent']"
@@ -136,15 +146,19 @@
                                 <tr>
                                     <th name="th_description" class="text-left">Description</th>
                                     <!--                                    <th name="th_category" class="text-center">Category</th>-->
-                                    <th name="th_quantity" class="text-center">Quantity</th>
+                                    <th t-if="doc.state not in ['draft','sent']" name="th_quantity" class="text-center">Quantity</th>
+
                                     <th name="th_priceunit" class="text-center">Unit Price</th>
+
                                     <th name="th_discount" t-if="display_discount" class="text-center"
                                         groups="product.group_discount_per_so_line">
                                         <span>Disc.%</span>
                                     </th>
                                     <!--<th name="th_taxes" class="text-right">Taxes</th>-->
-                                    <!--                                    <th t-if="doc.state not in ['draft','sent']" name="th_subtotal" class="text-center">-->
-                                    <th name="th_subtotal" class="text-center">
+
+
+                                    <th t-if="doc.state not in ['draft','sent']" name="th_subtotal" class="text-center">
+<!--                                    <th name="th_subtotal" class="text-center">-->
                                         <span groups="account.group_show_line_subtotals_tax_excluded">Amount</span>
                                         <span groups="account.group_show_line_subtotals_tax_included">Total Price
                                         </span>
@@ -168,7 +182,7 @@
                                             <td name="td_name">
                                                 <span t-field="line.name"/>
                                             </td>
-                                            <td name="td_quantity" class="text-center">
+                                            <td t-if="doc.state not in ['draft','sent']" name="td_quantity" class="text-center">
                                                 <span t-field="line.product_uom_qty"/>
                                                 <span t-field="line.product_uom"/>
                                             </td>
@@ -196,7 +210,11 @@
                                             <!--                                                <td t-if="doc.state not in ['draft','sent']" name="td_subtotal" class="text-center o_price_total">                   -->
 
                                             <!--                             <td name="td_subtotal" class="text-center o_price_total">-->
-                                            <td name="td_subtotal" class="text-center">
+
+
+
+                                            <td t-if="doc.state not in ['draft','sent']" name="td_subtotal" class="text-center o_price_total">
+<!--                                            <td name="td_subtotal" class="text-center">-->
                                                 <span t-field="line.price_subtotal"
                                                       groups="account.group_show_line_subtotals_tax_excluded"/>
                                                 <span t-field="line.price_total"
@@ -218,7 +236,7 @@
                                     </tr>
 
                                     <t t-if="current_section and (line_last or doc.order_line[line_index+1].display_type == 'line_section')">
-                                        <tr class="is-subtotal text-right">
+                                        <tr  class="is-subtotal text-right">
                                             <td name="td_section_subtotal" colspan="99">
                                                 <strong class="mr16">Subtotal</strong>
                                                 <span t-esc="current_subtotal"
@@ -231,7 +249,7 @@
                         </table>
 
                         <!--                            <h6 t-if="doc.state not in ['draft','sent']">ORDER NO.</h6>-->
-                        <div class="clearfix" name="so_total_summary">
+                        <div t-if="doc.state not in ['draft','sent']" class="clearfix" name="so_total_summary">
                             <div id="total" class="row" name="total">
                                 <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
                                     <table class="table table-sm">
@@ -287,7 +305,7 @@
                            <div class="row" style="padding:20px;">
                             <table width="100%" style="border:none;">
                                 <tbody >
-                                    <tr >
+                                    <tr>
                                         <td style="border:none;" >
                                             <div class="oe_structure"/>
                                             <p t-field="doc.note"/>
