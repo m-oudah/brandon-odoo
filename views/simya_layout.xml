@@ -4,7 +4,7 @@
             <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
 
                 <div class="header" >
-                     <div class="row">
+                    <div class="row">
                         <div class="col-7" style="background-color: #808285;">
                         </div>
                         <div class="col-5 text-right " style="background-color:#a6ce39;">
@@ -12,7 +12,7 @@
                                 <h4 style="color:#fff; padding:20px;">SIMYAPHARMA.COM</h4>
                             </div>
                         </div>
-                     </div>
+                    </div>
 
 
                     <div class="row">
@@ -45,38 +45,52 @@
             <xpath expr="//div[@t-attf-class='footer o_boxed_footer o_company_#{company.id}_layout']"
                    position="replace">
 
-                <div t-attf-class="footer o_boxed_footer" style="font-size:9pt; border-top:0px;">
+                <div t-attf-class="footer o_boxed_footer" style="font-size:12pt; border-top:0px;">
 
                     <div class="row align-middle"
-                         style="">
-                        <div class="col-3 " style="padding:15px;">
-                            <img src='/brandon/static/src/agrikima_footer.png' width="200px"/>
-                        </div>
-                        <!--                        <div class="col-4 text-wrap" style="border-right:solid 1px #ccc;padding:20px; ">-->
-                        <!--                            <p>-->
-                        <!--                                Professionals in the field of Poultry,-->
-                        <!--                                Veterinary, Pharmacology, and-->
-                        <!--                                Animal Health Care.-->
-                        <!--                            </p>-->
-                        <!--                        </div>-->
-                        <div class="col-5 " >
-                           <ul>
-                               <li> <span t-field="company.street"/> </li>
-                                <li> <span t-field="company.phone"/> </li>
+                         style="padding:15px; border-top:4px solid #d0d2d3; ">
+                        <div class="col-6" >
 
-                           </ul>
+                            <ul class="list-unstyled ">
+                                <li >
+                                    <span>
+                                        <img src='/brandon/static/src/location.png' width="30px" style="padding:5px;"/>
+                                        <span t-field="company.street2"/>
+                                    </span>
+                                </li>
+
+                                <li >
+                                    <span>
+                                        <img src='/brandon/static/src/whatsapp.png' width="30px" style="padding:5px;"/>
+                                        <span t-field="company.phone"/>
+                                    </span>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="col-5 " >
-                            <ul>
-                               <li> <span t-field="company.email"/>  </li>
-                               <li><span t-field="company.website"/></li>
-                           </ul>
+
+                        <div class="col-6" style="border-left:1px solid #d0d2d3;">
+                                 <ul class="list-unstyled ">
+                                <li >
+                                    <span >
+                                        <img src='/brandon/static/src/website.png' width="30px" style="padding:5px;"/>
+                                        <span t-field="company.email"/>
+                                    </span>
+                                </li>
+
+                                <li >
+                                    <span>
+                                        <img src='/brandon/static/src/website.png' width="30px" style="padding:5px;"/>
+                                        <span t-field="company.website"/>
+                                    </span>
+                                </li>
+                            </ul>
+
                         </div>
+
                     </div>
 
 
                     <div class="row" >
-
                         <div class="col-3 align-middle" style="background-color:#939598; padding:5px; ">
                             <p>
                             </p>
