@@ -44,10 +44,12 @@
                           <div class="row" style=" padding-bottom:5px; margin:0px; margin-top:5px;  ">
                               <div class="col-auto col-4"></div>
 
-                              <div class="col-auto col-4 mb-2 text-center" style="border-bottom:1px #919191 solid;">
-                                <h2 t-if="doc.date_order and doc.state in ['draft','sent']  " style="color:#000">QUOTATION </h2>
-                                <h2 t-if="doc.date_order and doc.state not in ['draft','sent']" style="color:#000">SALE ORDER </h2>
-<!--                                <h2 t-if="env.context.get('proforma', False) or is_pro_forma" style="color:#000">PRO-FORMA INVOICE </h2>-->
+
+
+                              <div class="col-auto col-6 mb-2 text-center" style="border-bottom:1px #919191 solid;">
+                                <h2 t-if="(doc.date_order and doc.state in ['draft','sent'])  and (not is_pro_forma) " style="color:#000">QUOTATION </h2>
+                                <h2 t-if="(doc.date_order and doc.state not in ['draft','sent']) and (not is_pro_forma) " style="color:#000">SALE ORDER </h2>
+                                <h2 t-if="env.context.get('proforma', False) or is_pro_forma" style="color:#000">PRO-FORMA INVOICE </h2>
                             </div>
 
                               <div class="col-auto col-4"></div>
@@ -107,7 +109,7 @@
                             </div>
                             <div t-if="env.context.get('proforma', False) or is_pro_forma"
                                  class="col-auto col-3 mw-100 mb-2 text-center" style="border-right:1px solid #919191;">
-                                <strong>PRO-FORMA INVOICE No:</strong>
+                                <strong>PRO-FORMA INV. No:</strong>
                                 <p class="m-0" t-field="doc.name"/>
                             </div>
 
