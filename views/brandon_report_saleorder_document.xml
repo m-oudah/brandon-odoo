@@ -49,7 +49,7 @@
                               <div class="col-auto col-6 mb-2 text-center" style="border-bottom:1px #919191 solid;">
                                 <h2 t-if="(doc.date_order and doc.state in ['draft','sent'])  and (not is_pro_forma) " style="color:#000">QUOTATION </h2>
                                 <h2 t-if="(doc.date_order and doc.state not in ['draft','sent']) and (not is_pro_forma) " style="color:#000">SALE ORDER </h2>
-                                <h2 t-if="env.context.get('proforma', False) or is_pro_forma" style="color:#000">PRO-FORMA INVOICE </h2>
+                                <h2 t-if="env.context.get('proforma', False) or is_pro_forma" style="color:#000">PROFORMA INVOICE </h2>
                             </div>
 
                               <div class="col-auto col-4"></div>
@@ -109,7 +109,7 @@
                             </div>
                             <div t-if="env.context.get('proforma', False) or is_pro_forma"
                                  class="col-auto col-3 mw-100 mb-2 text-center" style="border-right:1px solid #919191;">
-                                <strong>PRO-FORMA INV. No:</strong>
+                                <strong>PROFORMA INV. No:</strong>
                                 <p class="m-0" t-field="doc.name"/>
                             </div>
 
@@ -148,7 +148,7 @@
                                 <tr>
                                     <th name="th_description" class="text-left">Description</th>
                                     <!--                                    <th name="th_category" class="text-center">Category</th>-->
-                                    <th t-if="doc.state not in ['draft','sent']" name="th_quantity" class="text-center">Quantity</th>
+                                    <th t-if="doc.state not in ['draft','sent'] or is_pro_forma " name="th_quantity" class="text-center">Quantity</th>
 
                                     <th name="th_priceunit" class="text-center">Unit Price</th>
 
@@ -159,7 +159,7 @@
                                     <!--<th name="th_taxes" class="text-right">Taxes</th>-->
 
 
-                                    <th t-if="doc.state not in ['draft','sent']" name="th_subtotal" class="text-center">
+                                    <th t-if="doc.state not in ['draft','sent'] or is_pro_forma " name="th_subtotal" class="text-center">
 <!--                                    <th name="th_subtotal" class="text-center">-->
                                         <span groups="account.group_show_line_subtotals_tax_excluded">Amount</span>
                                         <span groups="account.group_show_line_subtotals_tax_included">Total Price
@@ -184,7 +184,8 @@
                                             <td name="td_name">
                                                 <span t-field="line.name"/>
                                             </td>
-                                            <td t-if="doc.state not in ['draft','sent']" name="td_quantity" class="text-center">
+
+                                            <td t-if="doc.state not in ['draft','sent'] or is_pro_forma" name="td_quantity" class="text-center">
                                                 <span t-field="line.product_uom_qty"/>
                                                 <span t-field="line.product_uom"/>
                                             </td>
@@ -215,7 +216,7 @@
 
 
 
-                                            <td t-if="doc.state not in ['draft','sent']" name="td_subtotal" class="text-center o_price_total">
+                                            <td t-if="doc.state not in ['draft','sent'] or is_pro_forma" name="td_subtotal" class="text-center o_price_total">
 <!--                                            <td name="td_subtotal" class="text-center">-->
                                                 <span t-field="line.price_subtotal"
                                                       groups="account.group_show_line_subtotals_tax_excluded"/>
@@ -251,7 +252,8 @@
                         </table>
 
                         <!--                            <h6 t-if="doc.state not in ['draft','sent']">ORDER NO.</h6>-->
-                        <div t-if="doc.state not in ['draft','sent']" class="clearfix" name="so_total_summary">
+
+                        <div t-if="doc.state not in ['draft','sent'] or is_pro_forma" class="clearfix" name="so_total_summary">
                             <div id="total" class="row" name="total">
                                 <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
                                     <table class="table table-sm">
