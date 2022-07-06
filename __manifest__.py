@@ -37,9 +37,12 @@
         'views/hipro_layout.xml',
         'views/agrikima_layout.xml',
         'views/fertizone_layout.xml',
+        'views/simya_layout.xml',
         'views/brandon_report_saleorder_document.xml',
+
         'views/saleUpdate.xml',
-        'views/simya_layout.xml'
+        'views/ProductUpdate.xml',
+        'views/OrderLineUpdate.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
